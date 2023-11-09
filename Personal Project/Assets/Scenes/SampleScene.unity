@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 306336021}
+  - component: {fileID: 306336022}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -154,6 +155,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &306336022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306336020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 891334d1e1aa4d34097fb7f4f232ef26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 93442643441906563, guid: 201cc50f74ae6f845874b70e3ac33f16, type: 3}
+  - {fileID: 3585611914650584169, guid: b5953c498df606043a10a6f16cd69101, type: 3}
+  - {fileID: 5101030442038751670, guid: 75ed9857444d481438dde8381adc8e1d, type: 3}
+  - {fileID: 4619518065377558516, guid: 0c8917f8896ebf6498042e21ebceeae3, type: 3}
+  powerup: {fileID: 4534554567011704635, guid: e3500b4c0ffee56479637c5f95883cdf, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
