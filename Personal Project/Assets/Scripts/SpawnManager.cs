@@ -7,14 +7,21 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] enemies;
     public GameObject powerup;
 
-    private float zEnemySpawn = 12.0f;
-    private float xSpawnRange = 16.0f;
+    private float zEnemySpawn = 6.0f;
+    private float xSpawnRange = 11.0f;
     private float zPowerupRange = 5.0f;
+    private float ySpawn = 0.75f;
+
+    private float powerupSpawnTime = 5.0f;
+    private float enemySpawnTime = 1.0f;
+    private float startDelay = 1.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        SpawnEnemy();
+        InvokeRepeating("SpawnRandomEnemy", startDelay, enemySpawnTime);
+        InvokeRepeating("SpawnPowerup", startDelay, powerupSpawnTime);
+
     }
 
     // Update is called once per frame
@@ -23,7 +30,7 @@ public class SpawnManager : MonoBehaviour
         
     }
 
-    void SpawnEnemy()
+    void SpawnRandomEnemy()
     {
         float randomX = Random.Range(-xSpawnRange, xSpawnRange);
         int randomIndex = Random.Range(0, enemies.Length);
@@ -31,5 +38,16 @@ public class SpawnManager : MonoBehaviour
         Vector3 spawnPos = new Vector3(randomX, 0.75f, zEnemySpawn);
 
         Instantiate(enemies[randomIndex], spawnPos, enemies[randomIndex].gameObject.transform.rotation);
+    }
+
+    void SpawnPowerup()
+    {
+
+        float randomX = Random.Range(-xSpawnRange, xSpawnRange);
+        float randomZ = Random.Range(-zPowerupRange, zPowerupRange);
+
+        Vector3 spawnPos = new Vector3(randomX, ySpawn, randomZ);
+
+        Instantiate(powerup, spawnPos, powerup.gameObject.transform.rotation);
     }
 }
